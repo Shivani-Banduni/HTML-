@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo</title>
+</head>
+<body>
+    <form>
+        <input id="one" type="text" placeholder="Enter Item">
+        <input  id="two"  type="text" placeholder="quantity">
+        <input  type="submit" value="Add item">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <td>Item</td>
+                <td>Quantity</td>
+                <td>Delete</td>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",myfun)
+
+var todo=JSON.parse(localStorage.getItem("vam"))||[]
+function myfun(event){
+    event.preventDefault()
+    var item=document.querySelector("#one").value
+    var qty=document.querySelector("#two").value
+var obj={it:item,qt:qty}
+todo.push(obj)
+
+localStorage.setItem("vam",JSON.stringify(todo))
+
+createtable(todo)
+}
+function createtable(todo){
+    document.querySelector("tbody").innerHTML=""
+    todo.map(function (elm){
+var trr=document.createElement("tr")
+
+var td1=document.createElement("td")
+td1.textContent=elm.it
+
+var td2=document.createElement("td")
+td2.textContent=elm.qt
+var td3=document.createElement("td")
+td3.textContent="Delete"
+
+trr.append(td1,td2,td3)
+document.querySelector("tbody").append(trr)
+
+    })
+}
+</script>
+

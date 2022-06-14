@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout_2</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-template-areas: "n n n n n n n n n n n n"
+                "L1 L1 L1 L1 L1 L1 L1 L1 R1 R1 R1 R1"
+                "L1 L1 L1 L1 L1 L1 L1 L1 R2 R2 R2 R2"
+                "L1 L1 L1 L1 L1 L1 L1 L1 R3 R3 R3 R3";
+
+            grid-gap: 20px;
+        }
+
+        /* small scree */
+        @media screen and (min-width:0px) and (max-width:320px) {
+            .container {
+
+                grid-template-rows: 100px 175px 125px 125px 125px;
+                grid-template-areas: "n n n n n n n n n n n n"
+                    "L1 L1 L1 L1 L1 L1 L1 L1 L1 L1 L1 L1"
+                    "R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 R1 "
+                    "R2 R2 R2 R2  R2 R2 R2 R2 R2 R2 R2 R2"
+                    "R3 R3 R3 R3 R3 R3 R3 R3 R3 R3 R3 R3";
+
+
+
+            }
+        }
+
+        /* medium screen */
+        @media screen and (min-width:321px) and (max-width:720px) {
+            .container {
+
+                grid-template-rows: 100px 300px 200px 200px 200px;
+                grid-template-areas: "n n n n n n n n n n n n"
+                    "L1 L1 L1 L1 L1 L1 L1 L1 L1 L1 L1 L1"
+                    "R1 R1 R1 R1 R2 R2 R2 R2 R3 R3 R3 R3";
+
+            }
+        }
+
+        .nav {
+            grid-area: n;
+            background-color: yellow;
+            font-size: 40px;
+        }
+
+        .Left {
+            grid-area: L1;
+            background-color: red;
+            font-size: 24px;
+            color: dimgray;
+        }
+
+        .Right1 {
+            grid-area: R1;
+            background-color: lime;
+            font-size: 24px;
+            color: dimgray;
+        }
+
+        .Right2 {
+            grid-area: R2;
+            background-color: lime;
+            font-size: 24px;
+            color: dimgray;
+        }
+
+        .Right3 {
+            grid-area: R3;
+            background-color: lime;
+            font-size: 24px;
+            color: dimgray;
+        }
+
+        p {
+            margin: 10px 0 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <p>Navigation</p>
+        </div>
+        <div class="Left">
+            <p>LEFT BOX</p>
+        </div>
+        <div class="Right1">
+            <p>RIGHT BOX 1</p>
+        </div>
+        <div class="Right2">
+            <p>RIGHT BOX 2</p>
+        </div>
+        <div class="Right3">
+            <p>RIGHT BOX 3</p>
+        </div>
+    </div>
+
+</body>

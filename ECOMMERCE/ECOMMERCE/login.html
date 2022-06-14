@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>log in </h1>
+    <form>
+
+
+        <input class="email" type="text" placeholder="enter email-id">
+        <input class="num" type="text" placeholder="enter number">
+        <input class="pass" type="text" placeholder="enter password">
+        <input type="submit" value="login">
+    </form>
+</body>
+</html>
+<script>
+
+document.querySelector("form").addEventListener("submit",frm)
+var reg=JSON.parse(localStorage.getItem("userdatabase"))
+// console.log(reg)
+ 
+    function frm(event){
+        event.preventDefault()
+        var email=document.querySelector(".email").value
+        var number=document.querySelector(".num").value
+        var password=document.querySelector(".pass").value
+
+        for(var i=0;i<reg.length;i++){
+            // console.log(reg[i].mail,reg[i].password)
+            if(reg[i].mail==email&& reg[i].password==password && reg[i].number==number)
+            {
+                alert(" you have successfully log in")
+            }
+               else{ alert(" wrong details")}
+            
+        }
+    }
+
+    
+       
+</script>

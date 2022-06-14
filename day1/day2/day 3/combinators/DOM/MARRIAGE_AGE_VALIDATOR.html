@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+select{
+    font-weight: bold;
+}
+input{
+    font-weight: bold;
+}
+button{
+    font-weight:bold ;
+}
+    </style>
+</head>
+<body>
+    
+   
+      <select name="gender" id="Gender" aria-placeholder="GENDER">
+<option value="male">MALE</option>
+<option value="FEMALE">FEMALE</option>
+</select>
+<input  type="number" placeholder="year">
+<button onclick="set()">submit</button>
+</body>
+</html>
+<script>
+function set(){
+    var x=document.querySelector("input").value
+    if(x>18){
+        alert("you are eligible to get married")
+    }else{
+        alert("you are not eligible to get married")
+    }
+}
+</script>

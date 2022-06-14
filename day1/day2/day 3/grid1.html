@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            display: grid;
+            grid-template-columns:repeat(12,1fr) ;
+            grid-template-rows: repeat(3,100px);
+            grid-gap: 20px;
+            /* border: 1px solid black; */
+            
+            grid-template-areas:
+           "a a a a a a b b b b b b"
+           "c c c c d d d d d d d d "
+        "e e e e e e e e e e e e";    
+            }
+
+
+            
+        #main>div{
+            /* border: 1px solid black; */
+            border-radius: 10px;
+           
+
+        }
+        .one{
+grid-area:a;
+background-color: grey;
+border: 1px black;
+        }
+        .two{
+grid-area: b;
+background-color: grey;
+        }
+        .three{
+grid-area: c;
+background-color: grey;
+        }
+        .four{
+grid-area: d;
+background-color: grey;
+        }
+        .five{
+grid-area: e;
+background-color: grey;
+        }
+    </style>
+</head>
+<body>
+  <div id="main">
+    <div class="one">A</div>
+    <div class="two">B</div>
+    <div class="three">C</div>
+    <div class="four">D</div>
+    <div class="five">E</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <input id="one" type="text" placeholder="Enter your item" >
+    <input id="two" type="text" placeholder="quantity" >
+    <input type="submit" value="Add item">
+    </form>
+
+<table>
+    <thead>
+        <tr>
+        <th>Item</th>
+    <th>Qty</th>
+    <th>Delt Itm</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",todolist);
+    function todolist(event){
+        event.preventDefault();
+        var item=document.querySelector("#one").value;
+        var quantity=document.querySelector("#two").value
+
+
+
+
+
+
+    }
+</script>
